@@ -25,7 +25,16 @@
         
         //Jika interaksi edit data
         }else if ($_POST['aksi'] == "edit"){
-            echo "Edit Data";
+
+            $nomor = $_POST['nomor'];
+            $nama = $_POST['nama_tamu'];
+            $email = $_POST['email'];
+            $waktu = $_POST['waktu_hadir'];
+            $komentar = $_POST['keterangan'];
+
+            $query = "UPDATE tb_butam SET nama='$nama', email='$email', waktu='$waktu', komentar='$komentar' WHERE nomor='$nomor';";
+            $sql = mysqLi_query($koneksi, $query);
+            header("location:index.php");
         }
     }
 

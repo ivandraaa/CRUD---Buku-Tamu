@@ -1,4 +1,32 @@
 <!DOCTYPE html>
+
+<?php
+    require 'connect.php';
+
+    // Value Tambah Data (Kosong)
+    $nomor = '';
+    $nama_tamu = '';
+    $email = '';
+    $waktu_hadir = '';
+    $keterangan = '';
+
+    if(isset($_GET['ubah'])){
+        $nomor = $_GET['ubah'];
+        // query
+        $query = "SELECT * FROM tb_butam WHERE nomor ='$nomor';";
+        $sql = mysqLi_query ($koneksi, $query);
+
+        $hasil = mysqLi_fetch_assoc($sql);
+
+        // Value Edit Data
+        $nama_tamu = $hasil['nama'];
+        $email = $hasil['email'];
+        $waktu_hadir = $hasil['waktu'];
+        $keterangan = $hasil['komentar'];
+
+    }
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,21 +55,22 @@
     <div class="container">
         <!-- Form untukk menginisialisasi proses tambah atau edit data -->
         <form method="POST" action="proses.php">
+            <input type="hidden" value="<?php echo $nomor ?>" name="nomor">
             <div class="mb-3 mt-4">
                 <label for="nama" class="form-label">Nama Tamu</label>
-                <input type="text" name="nama_tamu" class="form-control" id="nama" placeholder="Example: Wawan Setiawan">
+                <input type="text" name="nama_tamu" class="form-control" id="nama" value="<?php echo $nama_tamu; ?>" placeholder="Example: Wawan Setiawan">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="text" name="email" class="form-control" id="email" placeholder="Example: wawan@gmail.com">
+                <input type="text" name="email" class="form-control" id="email" value="<?php echo $email; ?>" placeholder="Example: wawan@gmail.com">
             </div>
             <div class="mb-3">
                 <label for="waktu" class="form-label">Waktu Hadir</label>
-                <input type="text" name="waktu_hadir" class="form-control" id="waktu" placeholder="Example: 18.00">
+                <input type="text" name="waktu_hadir" class="form-control" id="waktu" value="<?php echo $waktu_hadir; ?>" placeholder="Example: 18.00">
             </div>
             <div class="mb-3">
                 <label for="keterangan" class="form-label">Keterangan</label>
-                <textarea class="form-control" name="keterangan" id="keterangan" rows="3" placeholder="Example: Selamat atas pernikahan anda"></textarea>
+                <textarea class="form-control" name="keterangan" id="keterangan" rows="3" placeholder="Example: Selamat atas pernikahan anda"><?php echo $keterangan; ?></textarea>
             </div>
             <div class="mb-3 row mt-4">
                 <div class="col">
@@ -49,6 +78,7 @@
                     <?php
                         if(isset($_GET['ubah'])){
                     ?>
+
                     <button type="submit" name="aksi" value="edit" class="btn btn-primary">
                         <i class="fa fa-floppy-o" aria-hidden="true"></i>
                         Simpan Perubahan Data
