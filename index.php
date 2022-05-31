@@ -21,8 +21,19 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 
+    <!-- Data Tables -->
+    <link rel="stylesheet" type ="text/css" href="datatables/datatables.css">
+    <script type="text/javascript" src="datatables/datatables.js"></script>
+
     <title>Buku Tamu</title>
 </head>
+
+<script>
+    $(document).ready(function () {
+        $('#table').DataTable();
+    });
+</script>
+
 <body>
     <!-- Navigasi -->
     <nav class="navbar navbar-dark bg-dark">
@@ -49,9 +60,9 @@
 
         <!-- Table -->
         <div class="container table-responsive mt-5">
-            <table class="table align-middle table-bordered table-hover">
-                <thead class="table-dark">
-                    <tr>
+            <table id="table" class="table align-middle cell-border hover stripe">
+                <thead class="table-dark ">
+                    <tr class="align-item-center">
                         <th>Nomor</th>
                         <th>Nama</th>
                         <th>Email</th>
