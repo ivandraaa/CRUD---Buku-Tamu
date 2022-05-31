@@ -65,10 +65,6 @@
                 <input type="text" name="email" class="form-control" id="email" value="<?php echo $email; ?>" placeholder="Example: wawan@gmail.com">
             </div>
             <div class="mb-3">
-                <label for="waktu" class="form-label">Waktu Hadir</label>
-                <input type="text" name="waktu_hadir" class="form-control" id="waktu" value="<?php echo $waktu_hadir; ?>" placeholder="Example: 18.00">
-            </div>
-            <div class="mb-3">
                 <label for="keterangan" class="form-label">Keterangan</label>
                 <textarea class="form-control" name="keterangan" id="keterangan" rows="3" placeholder="Example: Selamat atas pernikahan anda"><?php echo $keterangan; ?></textarea>
             </div>
