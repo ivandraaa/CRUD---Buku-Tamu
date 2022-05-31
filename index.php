@@ -86,7 +86,7 @@
                             <a href="konfigurasi.php?ubah=<?php echo $hasil['nomor']; ?>" type="button" class="btn btn-primary btn-sm">
                                 <i class="fa fa-pencil-square-o"></i>
                             </a>
-                            <a href="proses.php?hapus=<?php echo $hasil['nomor']; ?>" type="button" class="btn btn-danger btn-sm">
+                            <a href="proses.php?hapus=<?php echo $hasil['nomor']; ?>" type="button" class="btn btn-danger btn-sm" onClick="return confirm('Apakah anda yakin akan menghapus data ini ???')">
                                 <i class="fa fa-trash-o"></i>
                             </a>
                         </td>

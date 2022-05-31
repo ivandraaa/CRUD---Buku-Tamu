@@ -31,6 +31,14 @@
 
     // jika interaksi metode GET maka akan menghapus
     if(isset($_GET['hapus'])){
-        echo "hapus data";
+        $nomor = $_GET['hapus'];
+        $query = "DELETE FROM tb_butam WHERE nomor = '$nomor';";
+        $sql = mysqLi_query($koneksi, $query);
+
+        if($sql){
+            header("location:index.php");
+        } else {
+            echo $query;
+        }
     }
 ?>
