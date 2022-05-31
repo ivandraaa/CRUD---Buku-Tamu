@@ -29,19 +29,19 @@
         <form method="POST" action="proses.php">
             <div class="mb-3 mt-4">
                 <label for="nama" class="form-label">Nama Tamu</label>
-                <input type="text" class="form-control" id="nama" placeholder="Example: Wawan Setiawan">
+                <input type="text" name="nama_tamu" class="form-control" id="nama" placeholder="Example: Wawan Setiawan">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="text" class="form-control" id="email" placeholder="Example: wawan@gmail.com">
+                <input type="text" name="email" class="form-control" id="email" placeholder="Example: wawan@gmail.com">
             </div>
             <div class="mb-3">
                 <label for="waktu" class="form-label">Waktu Hadir</label>
-                <input type="text" class="form-control" id="waktu" placeholder="Example: 18.00">
+                <input type="text" name="waktu_hadir" class="form-control" id="waktu" placeholder="Example: 18.00">
             </div>
             <div class="mb-3">
                 <label for="keterangan" class="form-label">Keterangan</label>
-                <textarea class="form-control" id="keterangan" rows="3" placeholder="Example: Selamat atas pernikahan anda"></textarea>
+                <textarea class="form-control" name="keterangan" id="keterangan" rows="3" placeholder="Example: Selamat atas pernikahan anda"></textarea>
             </div>
             <div class="mb-3 row mt-4">
                 <div class="col">
